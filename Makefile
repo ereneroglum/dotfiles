@@ -25,3 +25,18 @@ clean:
 	git clean -ffdx
 	git submodule foreach --recursive git clean -ffdx
 	git pull --recurse-submodules
+
+nix-install-apps:
+	nix-env --install \
+		alacritty \
+		emacs \
+		firefox \
+		git \
+		helix \
+		htop \
+		kate \
+		keepassxc \
+		mpv \
+		neovim \
+		qbittorrent \
+		weechat
