@@ -1,4 +1,5 @@
-PACKAGES=$(shell find "${PWD}" -maxdepth 1 -mindepth 1 -type d -not -name ".git" -exec basename {} ';')
+PACKAGES = $(shell find "${PWD}" -maxdepth 1 -mindepth 1 -type d -not -name ".git" -exec basename {} ';')
+APPLICATIONS = $(shell cat "applications.txt")
 
 define generate_list
 $(1)_install:
@@ -27,16 +28,7 @@ clean:
 	git pull --recurse-submodules
 
 nix-install-apps:
-	nix-env --install \
-		alacritty \
-		emacs \
-		firefox \
-		git \
-		helix \
-		htop \
-		kate \
-		keepassxc \
-		mpv \
-		neovim \
-		qbittorrent \
-		weechat
+	nix-env --install $(APPLICATIONS)
+
+nix-generate-app-list:
+	nix-env -q | cut -d '-' -f 1 | sort > applications.txt

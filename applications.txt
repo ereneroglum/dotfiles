@@ -1,0 +1,15 @@
+alacritty
+emacs
+firefox
+git
+helix
+htop
+kate
+keepassxc
+mpv
+neovim
+qbittorrent
+ranger
+tmux
+tor
+weechat
