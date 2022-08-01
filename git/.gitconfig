@@ -1,7 +1,0 @@
-[init]
-	defaultBranch = master
-[user]
-	name = Eren Eroğlu
-	email = 108634315+eroglueren@users.noreply.github.com
-[pull]
-	ff = only
