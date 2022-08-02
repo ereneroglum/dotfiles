@@ -8,7 +8,6 @@
     homeDirectory = "/home/eren";
     stateVersion = "22.11";
     packages = with pkgs; [
-      airshipper
       firefox
       htop
       kate
@@ -17,8 +16,8 @@
       man-pages-posix
       nerdfonts
       noto-fonts
-      polymc
       qbittorrent
+      tor
       ranger
       weechat
     ];
