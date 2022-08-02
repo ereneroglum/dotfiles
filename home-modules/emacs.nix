@@ -9,7 +9,7 @@
       (package-initialize)
       (add-to-list 'package-archives
                    '("melpa" . "http://melpa.org/packages/") t)
-      (setq package-selected-packages '(atom-one-dark-theme company eglot go-mode nix-mode rust-mode))
+      (setq package-selected-packages '(atom-one-dark-theme company eglot magit which-key go-mode nix-mode rust-mode))
       (when (cl-find-if-not #'package-installed-p package-selected-packages)
         (package-refresh-contents)
         (mapc #'package-install package-selected-packages))
@@ -53,6 +53,9 @@
 
       ;; File Search
       (ido-mode 1)
+
+      ;; Which Key Mode
+      (which-key-mode 1)
 
       ;; Company Mode Config
       (setq company-idle-delay 0.1
