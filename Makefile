@@ -1,5 +1,3 @@
-export NIXPKGS_ALLOW_UNFREE = 1
-
 .PHONY: install-home install-omen install-pavilon
 
 install-home:
@@ -10,3 +8,7 @@ install-omen:
 
 install-pavilon:
 	sudo nixos-rebuild switch --flake '.#pavilon'
+
+setup-unfree:
+	printf '{ }: { allowUnfree = true; }\n' > ~/.config/nixpkgs/config.nix
+
