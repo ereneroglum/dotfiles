@@ -15,42 +15,17 @@
     in {
       homeConfigurations.eren = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home.nix ];
+        modules = [ ./home-configs/home.nix ];
       };
 
       nixosConfigurations.omen = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [
-          ./machines/omen.nix
-          ./nixos-modules/boot.nix
-          ./nixos-modules/documentation.nix
-          ./nixos-modules/gpg.nix
-          ./nixos-modules/locales.nix
-          ./nixos-modules/nix.nix
-          ./nixos-modules/nvidia.nix
-          ./nixos-modules/plasma.nix
-          ./nixos-modules/printing.nix
-          ./nixos-modules/sound.nix
-          ./nixos-modules/xorg.nix
-        ];
+        modules = [ ./machine-configs/omen.nix ];
       };
 
       nixosConfigurations.pavilion = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [
-          ./machines/pavilon.nix
-          ./nixos-modules/boot.nix
-          ./nixos-modules/documentation.nix
-          ./nixos-modules/gpg.nix
-          ./nixos-modules/locales.nix
-          ./nixos-modules/nix.nix
-          ./nixos-modules/nvidia-offload.nix
-          ./nixos-modules/nvidia.nix
-          ./nixos-modules/plasma.nix
-          ./nixos-modules/printing.nix
-          ./nixos-modules/sound.nix
-          ./nixos-modules/xorg.nix
-        ];
+        modules = [ ./machine-configs/pavilon.nix ];
       };
     };
 }

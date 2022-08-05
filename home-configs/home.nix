@@ -19,15 +19,38 @@
     homeDirectory = "/home/eren";
     stateVersion = "22.11";
     packages = with pkgs; [
+      binutils
+      cargo
+      clang-tools
+      cppcheck
+      deadnix
       discord
+      file
       firefox
+      gcc
+      gdb
+      go
+      gopls
       htop
       kate
       keepassxc
+      ltrace
       man-pages
       man-pages-posix
+      nixfmt
+      polymc
+      python310Full
+      python310Packages.autopep8
+      python310Packages.flake8
+      python310Packages.python-lsp-server
       qbittorrent
+      radare2
+      rnix-lsp
+      rust-analyzer
+      rustc
+      rustfmt
       tor
+      valgrind
       weechat
     ];
   };
@@ -50,5 +73,4 @@
       });
     })
   ];
-
 }
