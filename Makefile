@@ -1,7 +1,8 @@
 .PHONY: install-home install-omen install-pavilon
 
 install-home:
-	home-manager switch --flake ".#eren"
+	# home-manager switch --flake ".#eren"
+	home-manager switch -f "./home-configs/home.nix"
 
 install-omen:
 	sudo nixos-rebuild switch --flake '.#omen'
