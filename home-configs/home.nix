@@ -4,13 +4,19 @@
   imports = [
     ./home-modules/alacritty.nix
     ./home-modules/bash.nix
+    ./home-modules/cpp.nix
     ./home-modules/emacs.nix
     ./home-modules/fonts.nix
     ./home-modules/git.nix
+    ./home-modules/go.nix
     ./home-modules/helix.nix
     ./home-modules/mpv.nix
     ./home-modules/neovim.nix
+    ./home-modules/nix.nix
+    ./home-modules/python.nix
     ./home-modules/ranger.nix
+    ./home-modules/reverse-engineering.nix
+    ./home-modules/rust
   ];
 
 
@@ -19,38 +25,16 @@
     homeDirectory = "/home/eren";
     stateVersion = "22.11";
     packages = with pkgs; [
-      binutils
-      cargo
-      clang-tools
-      cppcheck
-      deadnix
       discord
-      file
       firefox
-      gcc
-      gdb
-      go
-      gopls
       htop
       kate
       keepassxc
-      ltrace
       man-pages
       man-pages-posix
-      nixfmt
       polymc
-      python310Full
-      python310Packages.autopep8
-      python310Packages.flake8
-      python310Packages.python-lsp-server
       qbittorrent
-      radare2
-      rnix-lsp
-      rust-analyzer
-      rustc
-      rustfmt
       tor
-      valgrind
       weechat
     ];
   };
