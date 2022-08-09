@@ -16,7 +16,7 @@
     ./home-modules/python.nix
     ./home-modules/ranger.nix
     ./home-modules/reverse-engineering.nix
-    ./home-modules/rust
+    ./home-modules/rust.nix
   ];
 
 

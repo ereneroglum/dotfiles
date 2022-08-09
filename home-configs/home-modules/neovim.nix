@@ -17,7 +17,7 @@
         -- Autopairs
         use({
           'windwp/nvim-autopairs',
-          after = { 'nvim-treesitter' },
+          after = { 'impatient.nvim', 'nvim-treesitter' },
           config = function()
             local npairs = require('nvim-autopairs')
             npairs.setup({
@@ -34,7 +34,7 @@
         -- Bufferline
         use({
           'akinsho/bufferline.nvim',
-          after = { 'nvim-web-devicons' },
+          after = { 'impatient.nvim', 'nvim-web-devicons' },
           config = function()
             require('bufferline').setup()
           end
@@ -44,13 +44,13 @@
         use({
           'hrsh7th/nvim-cmp',
           requires = {
-            { 'hrsh7th/cmp-buffer', after = { 'nvim-cmp' } } ,
-            { 'hrsh7th/cmp-nvim-lsp', after = { 'nvim-cmp' } },
-            { 'hrsh7th/cmp-path', after = { 'nvim-cmp' } },
-            { 'ray-x/cmp-treesitter', after = { 'nvim-cmp' } },
-            { 'saadparwaiz1/cmp_luasnip', after = { 'LuaSnip', 'nvim-cmp' } }
+            { 'hrsh7th/cmp-buffer', after = { 'impatient.nvim', 'nvim-cmp' } } ,
+            { 'hrsh7th/cmp-nvim-lsp', after = { 'impatient.nvim', 'nvim-cmp' } },
+            { 'hrsh7th/cmp-path', after = { 'impatient.nvim', 'nvim-cmp' } },
+            { 'ray-x/cmp-treesitter', after = { 'impatient.nvim', 'nvim-cmp' } },
+            { 'saadparwaiz1/cmp_luasnip', after = { 'impatient.nvim', 'LuaSnip', 'nvim-cmp' } }
           },
-          after = { 'nvim-autopairs' },
+          after = { 'impatient.nvim', 'nvim-autopairs' },
           config = function()
             vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
             local cmp = require('cmp')
@@ -81,7 +81,7 @@
         -- File Tree
         use({
           'kyazdani42/nvim-tree.lua',
-          after = { 'nvim-web-devicons', 'project.nvim' },
+          after = { 'impatient.nvim', 'nvim-web-devicons', 'project.nvim' },
           config = function()
             require('nvim-tree').setup({
               respect_buf_cwd = true,
@@ -94,10 +94,18 @@
           end
         })
 
+        -- Impatient
+        use({
+          'lewis6991/impatient.nvim',
+          config = function()
+            require('impatient')
+          end
+        })
+
         -- LSP
         use({
           'neovim/nvim-lspconfig',
-          after = { 'cmp-nvim-lsp' },
+          after = { 'cmp-nvim-lsp', 'impatient.nvim' },
           config = function()
             local lspconfig = require('lspconfig')
             --- Provide capabilities
@@ -116,7 +124,7 @@
         -- Lualine
         use({
           'nvim-lualine/lualine.nvim',
-          after = { 'nvim-web-devicons', 'onedark.nvim' },
+          after = { 'impatient.nvim', 'nvim-web-devicons', 'onedark.nvim' },
           config = function()
             require('lualine').setup()
           end
@@ -124,12 +132,14 @@
 
         -- Luasnip
         use({
-          'L3MON4D3/LuaSnip'
+          'L3MON4D3/LuaSnip',
+          after = { 'impatient.nvim' }
         })
 
         -- Null-ls
         use({
           'jose-elias-alvarez/null-ls.nvim',
+          after = { 'impatient.nvim' },
           config = function()
             local null_ls = require('null-ls')
             local sources = {
@@ -149,6 +159,7 @@
         -- Onedark Theme
         use({
           'navarasu/onedark.nvim',
+          after = { 'impatient.nvim' },
           config = function()
             require('onedark').load()
           end
@@ -156,12 +167,14 @@
 
         -- Plenary
         use({
-          'nvim-lua/plenary.nvim'
+          'nvim-lua/plenary.nvim',
+          after = { 'impatient.nvim' }
         })
 
         -- Project
         use({
           'ahmedkhalf/project.nvim',
+          after = { 'impatient.nvim' },
           config = function()
             require('project_nvim').setup()
           end
@@ -170,7 +183,7 @@
         -- Telescope (Fuzzy Finder)
         use({
           'nvim-telescope/telescope.nvim',
-          after = { 'nvim-treesitter', 'nvim-web-devicons', 'plenary.nvim', 'project.nvim' },
+          after = { 'impatient.nvim', 'nvim-treesitter', 'nvim-web-devicons', 'plenary.nvim', 'project.nvim' },
           config = function()
             local telescope = require('telescope')
             telescope.setup()
@@ -181,6 +194,7 @@
         -- Treesitter
         use({
           'nvim-treesitter/nvim-treesitter',
+          after = { 'impatient.nvim' },
           config = function()
             require('nvim-treesitter.configs').setup({
               ensure_installed = { 'c', 'cpp', 'go', 'nix', 'python', 'rust' },
@@ -199,6 +213,7 @@
         -- Webdev Icons
         use({
           'kyazdani42/nvim-web-devicons',
+          after = { 'impatient.nvim' },
           config = function()
             require('nvim-web-devicons').setup({
               default = true
@@ -209,6 +224,7 @@
         -- WhichKey
         use({
           'folke/which-key.nvim',
+          after = { 'impatient.nvim' },
           config = function()
             require('which-key').setup()
           end
