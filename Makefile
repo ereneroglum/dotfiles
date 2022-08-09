@@ -6,7 +6,7 @@ install-home:
 install-omen:
 	sudo nixos-rebuild switch --flake '.#omen'
 
-install-pavilon:
+install-pavilion:
 	sudo nixos-rebuild switch --flake '.#pavilion'
 
 setup-unfree:
