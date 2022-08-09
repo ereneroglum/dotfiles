@@ -3,7 +3,6 @@
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
-    ./machines/pavilon.nix
     ./nixos-modules/boot.nix
     ./nixos-modules/documentation.nix
     ./nixos-modules/gpg.nix
