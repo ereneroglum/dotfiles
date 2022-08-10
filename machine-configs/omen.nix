@@ -5,6 +5,7 @@
     (modulesPath + "/installer/scan/not-detected.nix")
     ./nixos-modules/boot.nix
     ./nixos-modules/documentation.nix
+    ./nixos-modules/gaming.nix
     ./nixos-modules/gpg.nix
     ./nixos-modules/locales.nix
     ./nixos-modules/nix.nix
@@ -13,6 +14,7 @@
     ./nixos-modules/printing.nix
     ./nixos-modules/sound.nix
     ./nixos-modules/xorg.nix
+    ./nixos-modules/zram.nix
   ];
 
   boot = {
