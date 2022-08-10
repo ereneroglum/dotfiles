@@ -13,6 +13,7 @@
     ./nixos-modules/plasma.nix
     ./nixos-modules/printing.nix
     ./nixos-modules/sound.nix
+    ./nixos-modules/ssh.nix
     ./nixos-modules/xorg.nix
     ./nixos-modules/zram.nix
   ];
