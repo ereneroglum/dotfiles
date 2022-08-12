@@ -3,6 +3,7 @@
 {
   imports = [
     ./home-modules/alacritty.nix
+    ./home-modules/assembly.nix
     ./home-modules/bash.nix
     ./home-modules/cpp.nix
     ./home-modules/emacs.nix
