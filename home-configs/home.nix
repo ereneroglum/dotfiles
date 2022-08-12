@@ -10,6 +10,7 @@
     ./home-modules/git.nix
     ./home-modules/go.nix
     ./home-modules/helix.nix
+    ./home-modules/text-processing.nix
     ./home-modules/mpv.nix
     ./home-modules/neovim.nix
     ./home-modules/nix.nix
