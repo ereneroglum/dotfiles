@@ -9,7 +9,7 @@
       (package-initialize)
       (add-to-list 'package-archives
                    '("melpa" . "http://melpa.org/packages/") t)
-      (setq package-selected-packages '(atom-one-dark-theme company eglot magit which-key go-mode nix-mode rust-mode))
+      (setq package-selected-packages '(company eglot magit which-key go-mode nix-mode rust-mode vscode-dark-plus-theme))
       (when (cl-find-if-not #'package-installed-p package-selected-packages)
         (package-refresh-contents)
         (mapc #'package-install package-selected-packages))
@@ -39,8 +39,7 @@
       (tool-bar-mode -1)
       (xterm-mouse-mode 1)
       (set-frame-font "JetBrainsMono Nerd Font Mono 10")
-
-      (load-theme 'atom-one-dark t)
+      (load-theme 'vscode-dark-plus t)
 
       ;; Trailing Whitespace Clear Before Save
       (add-hook 'before-save-hook 'delete-trailing-whitespace)

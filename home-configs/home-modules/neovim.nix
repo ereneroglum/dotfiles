@@ -108,6 +108,7 @@
           after = { 'cmp-nvim-lsp', 'impatient.nvim' },
           config = function()
             local lspconfig = require('lspconfig')
+
             --- Provide capabilities
             local capabilities = vim.lsp.protocol.make_client_capabilities()
             capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
@@ -124,7 +125,7 @@
         -- Lualine
         use({
           'nvim-lualine/lualine.nvim',
-          after = { 'impatient.nvim', 'nvim-web-devicons', 'onedark.nvim' },
+          after = { 'impatient.nvim', 'nvim-web-devicons', 'vscode.nvim' },
           config = function()
             require('lualine').setup()
           end
@@ -153,15 +154,6 @@
               null_ls.builtins.formatting.rustfmt
             }
             null_ls.setup({ sources = sources })
-          end
-        })
-
-        -- Onedark Theme
-        use({
-          'navarasu/onedark.nvim',
-          after = { 'impatient.nvim' },
-          config = function()
-            require('onedark').load()
           end
         })
 
@@ -227,6 +219,21 @@
           after = { 'impatient.nvim' },
           config = function()
             require('which-key').setup()
+          end
+        })
+
+        -- VSCode Theme
+        use({
+          'Mofiqul/vscode.nvim',
+          after = { 'impatient.nvim', 'nvim-tree.lua' },
+          config = function()
+            vim.o.background = 'dark'
+            require('vscode').setup({
+              italic_comments = true,
+
+              --- Disable nvim-tree background color
+              disable_nvimtree_bg = true
+            })
           end
         })
 
