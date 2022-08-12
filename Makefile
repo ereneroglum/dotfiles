@@ -14,9 +14,9 @@ setup-home-manager: Installs home-manager.
 
 NOTE:
 
-If you want to disable flakes set environment variable DISABLE_FLAGS. Possible usage:
+If you want to disable flakes set environment variable DISABLE_FLAKE. Possible usage:
 
-DISABLE_FLAGS=1 make [flags]
+DISABLE_FLAKE=1 make [flags]
 
 endef
 
@@ -26,21 +26,21 @@ help:
 
 export NIXPKGS_ALLOW_UNFREE=1
 install-home:
-ifdef DISABLE_FLAGS
+ifdef DISABLE_FLAKE
 	home-manager switch -f "./home-configs/home.nix" --impure
 else
 	home-manager switch --flake ".#eren" --impure
 endif
 
 install-omen:
-ifdef DISABLE_FLAGS
+ifdef DISABLE_FLAKE
 	sudo nixos-rebuild switch -I nixos-config="./machine-configs/omen.nix"
 else
 	sudo nixos-rebuild switch --flake '.#omen'
 endif
 
 install-pavilion:
-ifdef DISABLE_FLAGS
+ifdef DISABLE_FLAKE
 	sudo nixos-rebuild switch -I nixos-config="./machine-configs/pavilon.nix"
 else
 	sudo nixos-rebuild switch --flake '.#pavilion'
