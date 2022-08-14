@@ -8,10 +8,10 @@
     ./home-modules/cpp.nix
     ./home-modules/emacs.nix
     ./home-modules/fonts.nix
+    ./home-modules/gaming.nix
     ./home-modules/git.nix
     ./home-modules/go.nix
     ./home-modules/helix.nix
-    ./home-modules/text-processing.nix
     ./home-modules/mpv.nix
     ./home-modules/neovim.nix
     ./home-modules/nix.nix
@@ -19,6 +19,7 @@
     ./home-modules/ranger.nix
     ./home-modules/reverse-engineering.nix
     ./home-modules/rust.nix
+    ./home-modules/text-processing.nix
   ];
 
 
@@ -34,7 +35,6 @@
       keepassxc
       man-pages
       man-pages-posix
-      polymc
       qbittorrent
       tor
       weechat
