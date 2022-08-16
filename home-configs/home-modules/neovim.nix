@@ -94,6 +94,21 @@
           end
         })
 
+        -- Git Signs
+        use({
+          'lewis6991/gitsigns.nvim',
+          after = { 'impatient.nvim' },
+          config = function()
+            require('gitsigns').setup({
+              linehl = true,
+              current_line_blame = true,
+              current_line_blame_opts = {
+                delay = 500
+              }
+            })
+          end
+        })
+
         -- Impatient
         use({
           'lewis6991/impatient.nvim',
