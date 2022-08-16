@@ -125,7 +125,7 @@
         -- Lualine
         use({
           'nvim-lualine/lualine.nvim',
-          after = { 'impatient.nvim', 'nvim-web-devicons', 'vscode.nvim' },
+          after = { 'impatient.nvim', 'nvim-web-devicons', 'onedark.nvim' },
           config = function()
             require('lualine').setup()
           end
@@ -135,6 +135,15 @@
         use({
           'L3MON4D3/LuaSnip',
           after = { 'impatient.nvim' }
+        })
+
+        -- Onedark Theme
+        use({
+          'navarasu/onedark.nvim',
+          after = { 'impatient.nvim' },
+          config = function()
+            require('onedark').load()
+          end
         })
 
         -- Plenary
@@ -199,21 +208,6 @@
           after = { 'impatient.nvim' },
           config = function()
             require('which-key').setup()
-          end
-        })
-
-        -- VSCode Theme
-        use({
-          'Mofiqul/vscode.nvim',
-          after = { 'impatient.nvim', 'nvim-tree.lua' },
-          config = function()
-            vim.o.background = 'dark'
-            require('vscode').setup({
-              italic_comments = true,
-
-              --- Disable nvim-tree background color
-              disable_nvimtree_bg = true
-            })
           end
         })
 
