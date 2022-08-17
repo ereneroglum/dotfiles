@@ -7,7 +7,6 @@
     clang-tools
     cmake
     cppcheck
-    doxygen
     gcc
     gnumake
     libtool
