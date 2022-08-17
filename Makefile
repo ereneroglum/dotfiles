@@ -47,7 +47,7 @@ else
 endif
 
 setup-channels:
-	sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+	sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixos
 	sudo nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 
 update-channels:
