@@ -2,8 +2,8 @@
 
 {
   home.packages = with pkgs; [
-    asymptote
-    graphviz
+    groff
+    pandoc
     texlive.combined.scheme-full
   ];
 }
