@@ -17,6 +17,7 @@
     ./home-modules/mpv.nix
     ./home-modules/neovim.nix
     ./home-modules/nix.nix
+    ./home-modules/online.nix
     ./home-modules/python.nix
     ./home-modules/ranger.nix
     ./home-modules/reverse-engineering.nix
@@ -29,16 +30,11 @@
     homeDirectory = "/home/eren";
     stateVersion = "22.11";
     packages = with pkgs; [
-      discord
-      firefox
       htop
       kate
       keepassxc
       man-pages
       man-pages-posix
-      qbittorrent
-      tor
-      weechat
     ];
   };
 
