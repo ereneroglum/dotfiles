@@ -40,6 +40,15 @@
           end
         })
 
+        -- Comments
+        use ({
+          'numToStr/Comment.nvim',
+          after = { 'impatient.nvim' },
+          config = function()
+            require('Comment').setup()
+          end
+        })
+
         -- Completion
         use({
           'hrsh7th/nvim-cmp',
@@ -100,7 +109,6 @@
           after = { 'impatient.nvim' },
           config = function()
             require('gitsigns').setup({
-              linehl = true,
               current_line_blame = true,
               current_line_blame_opts = {
                 delay = 500
