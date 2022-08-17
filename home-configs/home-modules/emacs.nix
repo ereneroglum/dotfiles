@@ -9,7 +9,8 @@
       (package-initialize)
       (add-to-list 'package-archives
                    '("melpa" . "http://melpa.org/packages/") t)
-      (setq package-selected-packages '(atom-one-dark-theme company eglot magit which-key go-mode nix-mode rust-mode))
+      (setq package-selected-packages
+            '(atom-one-dark-theme company eglot magit which-key go-mode nix-mode rust-mode))
       (when (cl-find-if-not #'package-installed-p package-selected-packages)
         (package-refresh-contents)
         (mapc #'package-install package-selected-packages))
@@ -22,24 +23,19 @@
             delete-old-versions t
             kept-new-versions 6
             kept-old-versions 2
-            version-control t
             backup-directory-alist '(("" . "~/.emacs.d/backup")))
 
-      ;; Memory Optimizations
-      (setq find-file-visit-truename t
-            inhibit-startup-message t
-            isearch-lazy-count t
-            read-process-output-max (* 1024 1024)
-            gc-cons-threshold (* 100 1024 1024))
-
       ;; UI
-      (global-display-line-numbers-mode)
+      (global-display-line-numbers-mode 1)
       (menu-bar-mode -1)
       (scroll-bar-mode -1)
       (tool-bar-mode -1)
       (xterm-mouse-mode 1)
       (set-frame-font "JetBrainsMono Nerd Font Mono 10")
       (load-theme 'atom-one-dark t)
+
+      ;; Show number of matching phrases
+      (setq isearch-lazy-count t)
 
       ;; Trailing Whitespace Clear Before Save
       (add-hook 'before-save-hook 'delete-trailing-whitespace)
