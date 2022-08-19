@@ -11,6 +11,8 @@ install-pavilion: Sets up nixos configuration for pavilion. (requires channels)
 setup-channels: Sets up channels for home-manager and nixos.
 update-channels: Update installed channels.
 setup-home-manager: Installs home-manager.
+clean-nvim: Cleans neovim configuration.
+clean-emacs: Cleans emacs configuration.
 
 NOTE:
 
@@ -55,4 +57,13 @@ update-channels:
 
 setup-home-manager:
 	nix-shell '<home-manager>' -A install
+
+clean-nvim:
+	rm -rf \
+		~/.config/nvim/plugin \
+		~/.cache/nvim \
+		~/.local/share/nvim
+
+clean-emacs:
+	rm -rf ~/.emacs.d
 
