@@ -35,6 +35,7 @@
       keepassxc
       man-pages
       man-pages-posix
+      xclip
     ];
   };
 
