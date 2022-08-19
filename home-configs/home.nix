@@ -55,15 +55,5 @@
         };
       });
     })
-    (self: super: {
-      biber = super.biber.overrideAttrs (old: {
-        patches = [
-          (super.fetchpatch {
-            url = "https://github.com/plk/biber/commit/d9e961710074d266ad6bdf395c98868d91952088.patch";
-            sha256 = "08fx7mvq78ndnj59xv3crncih7a8201rr31367kphysz2msjbj52";
-          })
-        ];
-      });
-    })
   ];
 }
