@@ -125,6 +125,19 @@
           end
         })
 
+        -- Indentline
+        use({
+          'lukas-reineke/indent-blankline.nvim',
+          after = { 'impatient.nvim' },
+          config = function()
+            require('indent_blankline').setup({
+              show_current_context = true,
+              show_current_context_start = true,
+              space_char_blankline = " "
+            })
+          end
+        })
+
         -- LSP
         use({
           'neovim/nvim-lspconfig',
@@ -245,6 +258,7 @@
 
       -- Show some empty characters
       vim.opt.list = true
+      vim.opt.listchars:append('space:·')
 
       -- Enable mouse support
       vim.opt.mouse = 'a'
