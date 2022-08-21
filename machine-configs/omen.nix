@@ -51,7 +51,7 @@
   };
 
   networking = {
-    hostName = "nixos";
+    hostName = "omen";
     useDHCP = false;
     enableIPv6 = false;
     interfaces.enp5s0.ipv4.addresses = [{
