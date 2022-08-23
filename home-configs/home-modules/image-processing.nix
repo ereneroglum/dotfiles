@@ -6,6 +6,7 @@
     gimp
     graphviz
     imagemagick
+    inkscape
     krita
     netpbm
   ];
