@@ -9,5 +9,8 @@
       "[" = "add speed -0.1";
       "]" = "add speed 0.1";
     };
+    config = {
+      hwdec = "auto";
+    };
   };
 }
