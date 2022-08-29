@@ -28,7 +28,7 @@
       "sd_mod"
     ];
     kernelModules = [ "kvm-amd" ];
-    kernelPackages = pkgs.linuxPackages_5_18;
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   fileSystems."/" =
