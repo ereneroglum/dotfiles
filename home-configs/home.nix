@@ -35,6 +35,7 @@
       keepassxc
       man-pages
       man-pages-posix
+      openssl_3
       xclip
     ];
   };
@@ -43,18 +44,4 @@
     home-manager.enable = true;
     tmux.enable = true;
   };
-
-  nixpkgs.overlays = [
-    (self: super: {
-      qbittorrent = super.qbittorrent.overrideAttrs (old: {
-        version = "4.4.2";
-        src = super.fetchFromGitHub {
-          owner = "qbittorrent";
-          repo = "qBittorrent";
-          rev = "release-4.4.2";
-          sha256 = "sha256-xBNN9YYKMDcoL1wvERjlAjV8vb2GVgwwlHtb5y0+f+8=";
-        };
-      });
-    })
-  ];
 }

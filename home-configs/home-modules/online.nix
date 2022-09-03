@@ -2,9 +2,9 @@
 
 {
   home.packages = with pkgs; [
-    discord
     firefox
     qbittorrent
+    thunderbird
     tor
     weechat
     wget
