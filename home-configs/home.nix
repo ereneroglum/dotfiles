@@ -44,4 +44,18 @@
     home-manager.enable = true;
     tmux.enable = true;
   };
+
+  nixpkgs.overlays = [
+    (self: super: {
+      qbittorrent = super.qbittorrent.overrideAttrs (old: {
+        version = "4.4.2";
+        src = super.fetchFromGitHub {
+          owner = "qbittorrent";
+          repo = "qBittorrent";
+          rev = "release-4.4.5";
+          sha256 = "sha256-EgRDNOJ4szdZA5ipOuGy2R0oVdjWcuqPU3ecU3ZNK3g=";
+        };
+      });
+    })
+  ];
 }
