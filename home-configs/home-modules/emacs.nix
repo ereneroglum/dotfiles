@@ -10,7 +10,7 @@
       (add-to-list 'package-archives
                    '("melpa" . "http://melpa.org/packages/") t)
       (setq package-selected-packages
-            '(atom-one-dark-theme company eglot magit which-key go-mode nix-mode rust-mode))
+            '(atom-one-dark-theme company eglot helm magit which-key go-mode nix-mode rust-mode))
       (when (cl-find-if-not #'package-installed-p package-selected-packages)
         (package-refresh-contents)
         (mapc #'package-install package-selected-packages))
@@ -27,6 +27,7 @@
 
       ;; UI
       (global-display-line-numbers-mode 1)
+      (global-hl-line-mode 1)
       (menu-bar-mode -1)
       (scroll-bar-mode -1)
       (tool-bar-mode -1)
@@ -46,8 +47,10 @@
       ;; Auto Close Brackets
       (electric-pair-mode 1)
 
-      ;; File Search
-      (ido-mode 1)
+      ;; Helm
+      (global-set-key (kbd "C-x C-f") #'helm-find-files)
+      (global-set-key (kbd "M-x") #'helm-M-x)
+      (helm-mode 1)
 
       ;; Which Key Mode
       (which-key-mode 1)
