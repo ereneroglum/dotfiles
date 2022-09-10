@@ -51,6 +51,7 @@
       (global-set-key (kbd "C-x C-f") #'helm-find-files)
       (global-set-key (kbd "M-x") #'helm-M-x)
       (helm-mode 1)
+      (helm-autoresize-mode 1)
 
       ;; Which Key Mode
       (which-key-mode 1)
