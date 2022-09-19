@@ -31,6 +31,7 @@
     homeDirectory = "/home/eren";
     stateVersion = "22.11";
     packages = with pkgs; [
+      ark
       htop
       kate
       keepassxc
