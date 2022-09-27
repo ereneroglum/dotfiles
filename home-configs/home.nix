@@ -7,7 +7,6 @@
     ./home-modules/assembly.nix
     ./home-modules/bash.nix
     ./home-modules/cpp.nix
-    ./home-modules/dart.nix
     ./home-modules/document-processing.nix
     ./home-modules/emacs.nix
     ./home-modules/fonts.nix

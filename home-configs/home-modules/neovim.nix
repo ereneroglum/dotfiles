@@ -151,7 +151,6 @@
 
             --- Setup Language Servers
             lspconfig.clangd.setup({ capabilities = capabilities })
-            lspconfig.dartls.setup({ capabilities = capabilities })
             lspconfig.gopls.setup({ capabilities = capabilities })
             lspconfig.pylsp.setup({ capabilities = capabilities })
             lspconfig.rnix.setup({ capabilities = capabilities })
@@ -215,7 +214,7 @@
           after = { 'impatient.nvim' },
           config = function()
             require('nvim-treesitter.configs').setup({
-              ensure_installed = { 'c', 'cpp', 'dart', 'go', 'nix', 'python', 'rust' },
+              ensure_installed = { 'c', 'cpp', 'go', 'nix', 'python', 'rust' },
               sync_install = false,
               highlight = {
                 enable = true
