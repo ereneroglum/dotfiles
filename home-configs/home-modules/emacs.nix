@@ -10,7 +10,7 @@
       (add-to-list 'package-archives
                    '("melpa" . "http://melpa.org/packages/") t)
       (setq package-selected-packages
-            '(atom-one-dark-theme company eglot helm magit which-key go-mode nix-mode rust-mode))
+            '(atom-one-dark-theme company eglot helm magit which-key dart-mode go-mode nix-mode rust-mode))
       (when (cl-find-if-not #'package-installed-p package-selected-packages)
         (package-refresh-contents)
         (mapc #'package-install package-selected-packages))
@@ -62,8 +62,9 @@
       (global-company-mode 1)
 
       ;; Eglot Config
-      (add-hook 'c++-mode-hook 'eglot-ensure)
       (add-hook 'c-mode-hook 'eglot-ensure)
+      (add-hook 'c++-mode-hook 'eglot-ensure)
+      (add-hook 'dart-mode-hook 'eglot-ensure)
       (add-hook 'go-mode-hook 'eglot-ensure)
       (add-hook 'nix-mode-hook 'eglot-ensure)
       (add-hook 'python-mode-hook 'eglot-ensure)
