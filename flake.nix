@@ -27,5 +27,9 @@
         inherit system;
         modules = [ ./machine-configs/pavilon.nix ];
       };
+
+      devShells.${system}.default = pkgs.mkShell {
+        packages = with pkgs; [ rnix-lsp gnumake ];
+      };
     };
 }
