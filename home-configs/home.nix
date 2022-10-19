@@ -6,6 +6,7 @@
     ./home-modules/archiving.nix
     ./home-modules/assembly.nix
     ./home-modules/bash.nix
+    ./home-modules/computation.nix
     ./home-modules/cpp.nix
     ./home-modules/document-processing.nix
     ./home-modules/emacs.nix
