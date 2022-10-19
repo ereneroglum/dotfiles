@@ -29,6 +29,7 @@
     ];
     kernelModules = [ "kvm-amd" ];
     kernelPackages = pkgs.linuxPackages_latest;
+    loader.grub.useOSProber = true; # Temprory fix for dual booting
   };
 
   fileSystems."/" =
