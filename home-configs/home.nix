@@ -19,6 +19,7 @@
     ./home-modules/mpv.nix
     ./home-modules/neovim.nix
     ./home-modules/nix.nix
+    ./home-modules/office.nix
     ./home-modules/online.nix
     ./home-modules/python.nix
     ./home-modules/ranger.nix

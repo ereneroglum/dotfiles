@@ -2,10 +2,8 @@
 
 {
   home.packages = with pkgs; [
-    firefox
-    qbittorrent
-    tor
-    weechat
-    wget
+    joplin-desktop
+    libreoffice
+    thunderbird
   ];
 }

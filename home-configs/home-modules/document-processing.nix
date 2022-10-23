@@ -5,7 +5,6 @@
     doxygen
     gnuplot_qt
     groff
-    libreoffice
     pandoc
     plantuml
     sphinx
