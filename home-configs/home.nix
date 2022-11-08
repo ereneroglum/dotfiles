@@ -1,32 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./home-modules/alacritty.nix
-    ./home-modules/archiving.nix
-    ./home-modules/assembly.nix
-    ./home-modules/bash.nix
-    ./home-modules/computation.nix
-    ./home-modules/cpp.nix
-    ./home-modules/document-processing.nix
-    ./home-modules/emacs.nix
-    ./home-modules/fonts.nix
-    ./home-modules/gaming.nix
-    ./home-modules/git.nix
-    ./home-modules/go.nix
-    ./home-modules/helix.nix
-    ./home-modules/image-processing.nix
-    ./home-modules/mpv.nix
-    ./home-modules/neovim.nix
-    ./home-modules/nix.nix
-    ./home-modules/office.nix
-    ./home-modules/online.nix
-    ./home-modules/python.nix
-    ./home-modules/ranger.nix
-    ./home-modules/reverse-engineering.nix
-    ./home-modules/rust.nix
-  ];
-
+  imports = map (i: "${./home-modules}/${i}")
+    (builtins.attrNames (builtins.readDir ./home-modules));
 
   home = {
     username = "eren";
@@ -44,8 +20,7 @@
     ];
   };
 
-  programs = {
-    home-manager.enable = true;
-    tmux.enable = true;
-  };
+  home.file."Templates".source = ./templates;
+
+  programs.home-manager.enable = true;
 }
