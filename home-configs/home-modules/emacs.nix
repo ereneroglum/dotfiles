@@ -65,7 +65,6 @@
       (add-hook 'c++-mode-hook 'eglot-ensure)
       (add-hook 'c-mode-hook 'eglot-ensure)
       (add-hook 'go-mode-hook 'eglot-ensure)
-      (add-hook 'nix-mode-hook 'eglot-ensure)
       (add-hook 'python-mode-hook 'eglot-ensure)
       (add-hook 'rust-mode-hook 'eglot-ensure)
     '';

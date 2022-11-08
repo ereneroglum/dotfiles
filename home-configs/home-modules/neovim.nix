@@ -152,7 +152,6 @@
             lspconfig.clangd.setup({ capabilities = capabilities })
             lspconfig.gopls.setup({ capabilities = capabilities })
             lspconfig.pylsp.setup({ capabilities = capabilities })
-            lspconfig.rnix.setup({ capabilities = capabilities })
             lspconfig.rust_analyzer.setup({ capabilities = capabilities })
           end
         })
