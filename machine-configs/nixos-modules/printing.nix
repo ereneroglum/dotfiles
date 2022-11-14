@@ -1,6 +1,19 @@
 { config, pkgs, ... }:
 
 {
-  services.printing.enable = true;
-  services.printing.drivers = with pkgs; [ gutenprint ];
+  services = {
+    avahi = {
+      enable = true;
+      nssmdns = true;
+    };
+    printing = {
+      enable = true;
+      drivers = with pkgs; [ gutenprint ];
+    };
+  };
+
+  hardware.sane = {
+    enable = true;
+    extraBackends = with pkgs; [ sane-airscan ];
+  };
 }

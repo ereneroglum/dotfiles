@@ -60,7 +60,7 @@
 
   users.users.eren = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "lp" "scanner" "networkmanager" "wheel" ];
   };
 }
 
