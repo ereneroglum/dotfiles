@@ -159,7 +159,7 @@
         -- Lualine
         use({
           'nvim-lualine/lualine.nvim',
-          after = { 'impatient.nvim', 'nvim-web-devicons', 'onedark.nvim' },
+          after = { 'impatient.nvim', 'nvim-web-devicons', 'vscode.nvim' },
           config = function()
             require('lualine').setup()
           end
@@ -169,15 +169,6 @@
         use({
           'L3MON4D3/LuaSnip',
           after = { 'impatient.nvim' }
-        })
-
-        -- Onedark Theme
-        use({
-          'navarasu/onedark.nvim',
-          after = { 'impatient.nvim' },
-          config = function()
-            require('onedark').load()
-          end
         })
 
         -- Plenary
@@ -203,6 +194,15 @@
             local telescope = require('telescope')
             telescope.setup()
             telescope.load_extension('projects')
+          end
+        })
+
+        -- Theme
+        use({
+          'Mofiqul/vscode.nvim',
+          after = { 'impatient.nvim' },
+          config = function()
+            require('vscode').change_style('dark')
           end
         })
 
