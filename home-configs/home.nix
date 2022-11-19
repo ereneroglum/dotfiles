@@ -15,6 +15,7 @@
       keepassxc
       man-pages
       man-pages-posix
+      okteta
       openssl_3
       xclip
     ];
