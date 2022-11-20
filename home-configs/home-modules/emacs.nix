@@ -17,14 +17,14 @@
         (mapc #'package-install package-selected-packages))
 
       ;; Backups
-      (unless (file-directory-p "~/.emacs.d/auto-save")
-        (make-directory "~/.emacs.d/auto-save"))
-      (setq auto-save-file-name-transforms '((".*" "~/.emacs.d/auto-save/" t))
+      (unless (file-directory-p (concat user-emacs-directory "auto-save"))
+        (make-directory (concat user-emacs-directory "auto-save")))
+      (setq auto-save-file-name-transforms `((".*" ,(concat user-emacs-directory "auto-save" "/") t))
             backup-by-copying t
             delete-old-versions t
             kept-new-versions 6
             kept-old-versions 2
-            backup-directory-alist '(("" . "~/.emacs.d/backup")))
+            backup-directory-alist `(("" . ,(concat user-emacs-directory "backup"))))
 
       ;; UI
       (global-display-line-numbers-mode 1)
