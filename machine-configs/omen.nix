@@ -59,7 +59,7 @@
       prefixLength = 24;
     }];
     defaultGateway = "192.168.1.1";
-    nameservers = [ "1.1.1.1" "8.8.8.8" ];
+    nameservers = [ "1.1.1.1" ];
     firewall = {
       allowedUDPPorts = [ 51000 ];
       allowedTCPPorts = [ 25565 51000 ];
