@@ -11,7 +11,7 @@
         packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
       end
 
-      vim.cmd [[ packadd packer.nvim ]]
+      vim.cmd('packadd packer.nvim')
 
       require('packer').startup(function(use)
         -- Autopairs
@@ -133,7 +133,7 @@
             require('indent_blankline').setup({
               show_current_context = true,
               show_current_context_start = true,
-              space_char_blankline = " "
+              space_char_blankline = ' '
             })
           end
         })
@@ -202,7 +202,7 @@
           'Mofiqul/vscode.nvim',
           after = { 'impatient.nvim' },
           config = function()
-            require('vscode').change_style('dark')
+            vim.cmd('colorscheme vscode')
           end
         })
 
