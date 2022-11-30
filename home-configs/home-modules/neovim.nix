@@ -87,22 +87,6 @@
           end
         })
 
-        -- File Tree
-        use({
-          'kyazdani42/nvim-tree.lua',
-          after = { 'impatient.nvim', 'nvim-web-devicons', 'project.nvim' },
-          config = function()
-            require('nvim-tree').setup({
-              respect_buf_cwd = true,
-              sync_root_with_cwd = true,
-              update_focused_file = {
-                enable = true,
-                update_root = true
-              }
-            })
-          end
-        })
-
         -- Git Signs
         use({
           'lewis6991/gitsigns.nvim',
@@ -177,23 +161,29 @@
           after = { 'impatient.nvim' }
         })
 
-        -- Project
-        use({
-          'ahmedkhalf/project.nvim',
-          after = { 'impatient.nvim' },
-          config = function()
-            require('project_nvim').setup()
-          end
-        })
-
         -- Telescope (Fuzzy Finder)
         use({
           'nvim-telescope/telescope.nvim',
-          after = { 'impatient.nvim', 'nvim-treesitter', 'nvim-web-devicons', 'plenary.nvim', 'project.nvim' },
+          after = { 'impatient.nvim', 'nvim-treesitter', 'nvim-web-devicons', 'plenary.nvim' },
+          requires = {
+            {
+              'ahmedkhalf/project.nvim',
+              after = { 'impatient.nvim', 'telescope.nvim' },
+              config = function()
+                require('project_nvim').setup()
+                require('telescope').load_extension('projects')
+              end
+            },
+            {
+              'nvim-telescope/telescope-file-browser.nvim',
+              after = { 'impatient.nvim', 'telescope.nvim' },
+              config = function()
+                require('telescope').load_extension('file_browser')
+              end
+            }
+          },
           config = function()
-            local telescope = require('telescope')
-            telescope.setup()
-            telescope.load_extension('projects')
+            require('telescope').setup()
           end
         })
 
