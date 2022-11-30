@@ -196,6 +196,15 @@
           end
         })
 
+        -- Toggleterm
+        use({
+          'akinsho/toggleterm.nvim',
+          after = { 'impatient.nvim' },
+          config = function()
+            require('toggleterm').setup()
+          end
+        })
+
         -- Treesitter
         use({
           'nvim-treesitter/nvim-treesitter',
