@@ -23,7 +23,10 @@
         defaultPackage = packages.@packagename@;
 
         devShell = pkgs.mkShell {
-          packages = with pkgs; [ clang-tools cppcheck ];
+          shellHook = ''
+            SHELL=${pkgs.bashInteractive}/bin/bash
+          '';
+          packages = with pkgs; [ bashInteractive clang-tools cppcheck ];
           inputsFrom = [ packages.@packagename@ ];
         };
       }

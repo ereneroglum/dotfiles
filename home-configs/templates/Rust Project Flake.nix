@@ -23,7 +23,10 @@
         defaultPackage = packages.@packagename@;
 
         devShell = pkgs.mkShell {
-          packages = with pkgs; [ rust-analyzer rustfmt ];
+          shellHook = ''
+            SHELL=${pkgs.bashInteractive}/bin/bash
+          '';
+          packages = with pkgs; [ bashInteractive rust-analyzer rustfmt ];
           inputsFrom = [ packages.@packagename@ ];
         };
       }

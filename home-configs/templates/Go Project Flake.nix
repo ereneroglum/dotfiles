@@ -23,7 +23,10 @@
         defaultPackage = packages.@packagename@;
 
         devShell = pkgs.mkShell {
-          packages = with pkgs; [ gopls ];
+          shellHook = ''
+            SHELL=${pkgs.bashInteractive}/bin/bash
+          '';
+          packages = with pkgs; [ bashInteractive gopls ];
           inputsFrom = [ packages.@packagename@ ];
         };
       }
