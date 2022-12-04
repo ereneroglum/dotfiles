@@ -27,9 +27,7 @@
         })
 
         -- Boostrap package manager
-        use({
-          'wbthomason/packer.nvim'
-        })
+        use({ 'wbthomason/packer.nvim' })
 
         -- Bufferline
         use({
@@ -87,6 +85,12 @@
           end
         })
 
+        -- Dressing
+        use({
+          'stevearc/dressing.nvim',
+          after = { 'impatient.nvim', 'telescope.nvim' }
+        })
+
         -- Git Signs
         use({
           'lewis6991/gitsigns.nvim',
@@ -120,6 +124,12 @@
               space_char_blankline = ' '
             })
           end
+        })
+
+        -- Legendary
+        use({
+          'mrjones2014/legendary.nvim',
+          after = { 'dressing.nvim', 'impatient.nvim', 'telescope.nvim' }
         })
 
         -- LSP
