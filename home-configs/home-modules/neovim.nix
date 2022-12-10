@@ -51,17 +51,35 @@
         use({
           'hrsh7th/nvim-cmp',
           requires = {
-            { 'hrsh7th/cmp-buffer', after = { 'impatient.nvim', 'nvim-cmp' } } ,
+            { 'hrsh7th/cmp-buffer', after = { 'impatient.nvim', 'nvim-cmp' } },
             { 'hrsh7th/cmp-nvim-lsp', after = { 'impatient.nvim', 'nvim-cmp' } },
             { 'hrsh7th/cmp-path', after = { 'impatient.nvim', 'nvim-cmp' } },
             { 'ray-x/cmp-treesitter', after = { 'impatient.nvim', 'nvim-cmp' } },
-            { 'saadparwaiz1/cmp_luasnip', after = { 'impatient.nvim', 'LuaSnip', 'nvim-cmp' } }
+            { 'saadparwaiz1/cmp_luasnip', after = { 'impatient.nvim', 'LuaSnip', 'nvim-cmp' } },
+            { 'onsails/lspkind.nvim', after = { 'impatient.nvim' } }
           },
-          after = { 'impatient.nvim', 'nvim-autopairs' },
+          after = { 'impatient.nvim', 'lspkind.nvim', 'nvim-autopairs' },
           config = function()
             vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
             local cmp = require('cmp')
             cmp.setup({
+              window = {
+                completion = {
+                  winhighlight = 'Normal:Pmenu,FloatBorder:Pmenu,Search:None',
+                  col_offset = -3,
+                  side_padding = 0
+                }
+              },
+              formatting = {
+                fields = { 'kind', 'abbr', 'menu' },
+                format = function(entry, vim_item)
+                  local kind = require('lspkind').cmp_format({ mode = 'symbol_text', maxwidth = 50 })(entry, vim_item)
+                  local strings = vim.split(kind.kind, '%s', { trimempty = true })
+                  kind.kind = ' ' .. strings[1] .. ' '
+                  kind.menu = '    (' .. strings[2] .. ')'
+                  return kind
+                end
+              },
               mapping = cmp.mapping.preset.insert({
                 ['<CR>'] = cmp.mapping.confirm({ select = true })
               }),
