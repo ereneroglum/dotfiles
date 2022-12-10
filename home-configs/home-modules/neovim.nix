@@ -17,7 +17,6 @@
         -- Autopairs
         use({
           'windwp/nvim-autopairs',
-          after = { 'impatient.nvim', 'nvim-treesitter' },
           config = function()
             local npairs = require('nvim-autopairs')
             npairs.setup({
@@ -32,7 +31,6 @@
         -- Bufferline
         use({
           'akinsho/bufferline.nvim',
-          after = { 'impatient.nvim', 'nvim-web-devicons' },
           config = function()
             require('bufferline').setup()
           end
@@ -41,7 +39,6 @@
         -- Comments
         use ({
           'numToStr/Comment.nvim',
-          after = { 'impatient.nvim' },
           config = function()
             require('Comment').setup()
           end
@@ -51,14 +48,13 @@
         use({
           'hrsh7th/nvim-cmp',
           requires = {
-            { 'hrsh7th/cmp-buffer', after = { 'impatient.nvim', 'nvim-cmp' } },
-            { 'hrsh7th/cmp-nvim-lsp', after = { 'impatient.nvim', 'nvim-cmp' } },
-            { 'hrsh7th/cmp-path', after = { 'impatient.nvim', 'nvim-cmp' } },
-            { 'ray-x/cmp-treesitter', after = { 'impatient.nvim', 'nvim-cmp' } },
-            { 'saadparwaiz1/cmp_luasnip', after = { 'impatient.nvim', 'LuaSnip', 'nvim-cmp' } },
-            { 'onsails/lspkind.nvim', after = { 'impatient.nvim' } }
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-path' },
+            { 'ray-x/cmp-treesitter' },
+            { 'saadparwaiz1/cmp_luasnip' },
+            { 'onsails/lspkind.nvim' }
           },
-          after = { 'impatient.nvim', 'lspkind.nvim', 'nvim-autopairs' },
           config = function()
             vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
             local cmp = require('cmp')
@@ -105,14 +101,12 @@
 
         -- Dressing
         use({
-          'stevearc/dressing.nvim',
-          after = { 'impatient.nvim', 'telescope.nvim' }
+          'stevearc/dressing.nvim'
         })
 
         -- Git Signs
         use({
           'lewis6991/gitsigns.nvim',
-          after = { 'impatient.nvim' },
           config = function()
             require('gitsigns').setup({
               current_line_blame = true,
@@ -123,18 +117,9 @@
           end
         })
 
-        -- Impatient
-        use({
-          'lewis6991/impatient.nvim',
-          config = function()
-            require('impatient')
-          end
-        })
-
         -- Indentline
         use({
           'lukas-reineke/indent-blankline.nvim',
-          after = { 'impatient.nvim' },
           config = function()
             require('indent_blankline').setup({
               show_current_context = true,
@@ -146,14 +131,12 @@
 
         -- Legendary
         use({
-          'mrjones2014/legendary.nvim',
-          after = { 'dressing.nvim', 'impatient.nvim', 'telescope.nvim' }
+          'mrjones2014/legendary.nvim'
         })
 
         -- LSP
         use({
           'neovim/nvim-lspconfig',
-          after = { 'cmp-nvim-lsp', 'impatient.nvim' },
           config = function()
             local lspconfig = require('lspconfig')
 
@@ -171,7 +154,6 @@
         -- Lualine
         use({
           'nvim-lualine/lualine.nvim',
-          after = { 'impatient.nvim', 'nvim-web-devicons', 'vscode.nvim' },
           config = function()
             require('lualine').setup()
           end
@@ -179,24 +161,20 @@
 
         -- Luasnip
         use({
-          'L3MON4D3/LuaSnip',
-          after = { 'impatient.nvim' }
+          'L3MON4D3/LuaSnip'
         })
 
         -- Plenary
         use({
-          'nvim-lua/plenary.nvim',
-          after = { 'impatient.nvim' }
+          'nvim-lua/plenary.nvim'
         })
 
         -- Telescope (Fuzzy Finder)
         use({
           'nvim-telescope/telescope.nvim',
-          after = { 'impatient.nvim', 'nvim-treesitter', 'nvim-web-devicons', 'plenary.nvim' },
           requires = {
             {
               'ahmedkhalf/project.nvim',
-              after = { 'impatient.nvim', 'telescope.nvim' },
               config = function()
                 require('project_nvim').setup()
                 require('telescope').load_extension('projects')
@@ -204,7 +182,6 @@
             },
             {
               'nvim-telescope/telescope-file-browser.nvim',
-              after = { 'impatient.nvim', 'telescope.nvim' },
               config = function()
                 require('telescope').load_extension('file_browser')
               end
@@ -218,7 +195,6 @@
         -- Theme
         use({
           'Mofiqul/vscode.nvim',
-          after = { 'impatient.nvim' },
           config = function()
             vim.cmd('colorscheme vscode')
           end
@@ -227,7 +203,6 @@
         -- Toggleterm
         use({
           'akinsho/toggleterm.nvim',
-          after = { 'impatient.nvim' },
           config = function()
             require('toggleterm').setup()
           end
@@ -236,7 +211,6 @@
         -- Treesitter
         use({
           'nvim-treesitter/nvim-treesitter',
-          after = { 'impatient.nvim' },
           config = function()
             require('nvim-treesitter.configs').setup({
               ensure_installed = { 'c', 'cpp', 'go', 'nix', 'python', 'rust' },
@@ -255,7 +229,6 @@
         -- Webdev Icons
         use({
           'kyazdani42/nvim-web-devicons',
-          after = { 'impatient.nvim' },
           config = function()
             require('nvim-web-devicons').setup({
               default = true
@@ -266,7 +239,6 @@
         -- WhichKey
         use({
           'folke/which-key.nvim',
-          after = { 'impatient.nvim' },
           config = function()
             require('which-key').setup()
           end
