@@ -1,9 +1,7 @@
 {
   inputs = {
     nixpkgs.url = github:NixOS/nixpkgs;
-    home-manager = {
-      url = github:nix-community/home-manager;
-    };
+    home-manager.url = github:nix-community/home-manager;
   };
 
   description = "Flake for building user environment";
@@ -28,8 +26,6 @@
         modules = [ ./machine-configs/pavilon.nix ];
       };
 
-      devShells.${system}.default = pkgs.mkShell {
-        packages = with pkgs; [ rnix-lsp gnumake ];
-      };
+      devShells.${system}.default = import ./shell.nix { inherit pkgs; };
     };
 }
