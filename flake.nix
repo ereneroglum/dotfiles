@@ -1,7 +1,7 @@
 {
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs;
-    home-manager.url = github:nix-community/home-manager;
+    nixpkgs.url = "github:NixOS/nixpkgs";
+    home-manager.url = "github:nix-community/home-manager";
   };
 
   description = "Flake for building user environment";
