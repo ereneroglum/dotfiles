@@ -3,8 +3,10 @@
 {
   services.openssh = {
     enable = true;
-    kbdInteractiveAuthentication = false;
-    passwordAuthentication = false;
-    permitRootLogin = "no";
+    settings = {
+      KbdInteractiveAuthentication = false;
+      PasswordAuthentication = false;
+      PermitRootLogin = "no";
+    };
   };
 }
