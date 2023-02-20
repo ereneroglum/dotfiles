@@ -60,9 +60,10 @@ setup-home-manager:
 
 clean-nvim:
 	rm -rf \
-		~/.config/nvim/plugin \
 		~/.cache/nvim \
-		~/.local/share/nvim
+		~/.config/nvim/lazy-lock.json \
+		~/.local/share/nvim \
+		~/.local/state/nvim
 
 clean-emacs:
 	rm -rf ~/.emacs.d
