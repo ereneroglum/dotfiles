@@ -10,6 +10,7 @@
     stateVersion = "22.11";
     packages = with pkgs; [
       ark
+      fd
       htop
       kate
       keepassxc
@@ -17,6 +18,8 @@
       man-pages-posix
       okteta
       openssl_3
+      ripgrep
+      silver-searcher
       xclip
     ];
   };
