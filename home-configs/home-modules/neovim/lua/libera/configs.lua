@@ -14,8 +14,11 @@ function M.setup()
   -- Set folding
   vim.opt.foldlevel = 7
 
-  -- Set epxandtab
+  -- Set expandtab
   vim.opt.expandtab = true
+
+  -- Set colorcolumn
+  vim.opt.colorcolumn = "80"
 end
 
 return M

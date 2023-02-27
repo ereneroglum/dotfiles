@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  home.packages = with pkgs; [ git fd ripgrep ];
+
   programs.neovim = {
     enable = true;
     package = pkgs.neovim-unwrapped;
