@@ -15,7 +15,7 @@
           @packagename@ = pkgs.rustPlatform.buildRustPackage {
             pname = "@packagename@";
             version = "@packageversion@";
-            src = ./.;
+            src = "${self}";
             cargoSha256 = pkgs.lib.fakeSha256;
           };
         };

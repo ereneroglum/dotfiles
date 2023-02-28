@@ -15,7 +15,7 @@
           @packagename@ = pkgs.python3Packages.buildPythonPackage {
             pname = "@packagename@";
             version = "@packageversion@";
-            src = ./.;
+            src = "${self}";
           };
         };
 

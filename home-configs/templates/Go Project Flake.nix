@@ -15,7 +15,7 @@
           @packagename@ = pkgs.buildGoModule {
             pname = "@packagename@";
             version = "@packageversion@";
-            src = ./.;
+            src = "${self}";
             vendorSha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
           };
         };

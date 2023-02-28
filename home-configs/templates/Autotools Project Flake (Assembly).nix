@@ -16,7 +16,7 @@
             pname = "@packagename@";
             version = "@packageversion@";
             nativeBuildInputs = with pkgs; [ autoreconfHook nasm yasm ];
-            src = ./.;
+            src = "${self}";
           };
         };
 
